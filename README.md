@@ -44,16 +44,13 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/flask-dashboard-adminlte.git
-$ cd flask-dashboard-adminlte
+$ git clone git@github.com:jeesang7/finkl.git
+$ cd finkl
 $
 $ # Virtualenv modules installation (Unix based systems)
-$ virtualenv env
-$ source env/bin/activate
-$
-$ # Virtualenv modules installation (Windows based systems)
-$ # virtualenv env
-$ # .\env\Scripts\activate
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ python -V
 $
 $ # Install modules - SQLite Database
 $ pip3 install -r requirements.txt
@@ -77,11 +74,32 @@ $ # --port=5000    - specify the app port (default 5000)
 $ flask run --host=0.0.0.0 --port=5000
 $
 $ # Access the dashboard in browser: http://127.0.0.1:5000/
+$ open http://127.0.0.1:5000/
 ```
 
 > Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
 
 <br />
+
+## Connect to sqlite3 or PostgreSQL using DBeaver
+- Install [DBeaver](https://dbeaver.io/download/)
+- Install [PostgreSQL](https://postgresapp.com/downloads.html)
+- Connect to sqlite, `db.sqlite3` file
+- Production mode, connect to PostgreSQL
+  - Make sure the `.env` has the right credentials to access the database.
+- View created my account on 'Table > User > Data'
+
+
+## Useful PostgreSQL commands
+```bash
+$ psql   # auto login to my database 'jisang'
+```
+```sql
+jisang=# \dt
+jisang=# SELECT * FROM public."User";
+
+```
+
 
 ## Code-base structure
 
